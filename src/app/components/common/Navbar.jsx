@@ -1,0 +1,110 @@
+"use client";
+import React, { useState } from "react";
+import { motion } from "framer-motion";
+import Image from "next/image";
+import Link from "next/link";
+import CowLogo from "../../../../public/CowLogo.svg";
+import { useNavStore } from "@/app/data/zustand/navStore";
+import { Menu,MenuItem,ProductItem,HoveredLink,MobileMenuItem } from "@/app/constants/NavbarConstants";
+
+
+export default function Navbar() {
+  const {active,setActive,isMobileMenuOpen,toggleMobileMenu,mobileActiveItem,setMobileActiveItem} = useNavStore();
+
+  return (
+    <div className="sticky top-0 z-50 w-full">
+      <div className="relative w-full flex justify-center container mx-auto md:p-0 p-5 md:bg-transparent bg-[#ff2929] ">
+        <div className="w-full flex justify-between items-center max-w-7xl md:p-4 p-0 md:bg-[#ff2929] md:rounded-full">
+          
+          <Link href="/" className="flex items-center space-x-4">
+            <Image
+              src={CowLogo}
+              height={96}
+              width={120}
+              alt="Coding of World Logo"
+            />
+          </Link>
+          <div className="hidden md:flex items-center bg-blue-700 rounded-full px-5 py-3">
+            <Menu setActive={setActive}>
+              <MenuItem setActive={setActive} active={active} item="Products">
+                <div className="grid grid-cols-2 gap-10 p-4">
+                  <ProductItem title="Difmo" href="https://difmo.com" src="https://assets.aceternity.com/demos/algochurn.webp" description="..." />
+                  <ProductItem title="Difmo" href="https://difmo.com" src="https://assets.aceternity.com/demos/algochurn.webp" description="..." />
+                  <ProductItem title="Difmo" href="https://difmo.com" src="https://assets.aceternity.com/demos/algochurn.webp" description="..." />
+                  <ProductItem title="Difmo" href="https://difmo.com" src="https://assets.aceternity.com/demos/algochurn.webp" description="..." />
+                </div>
+              </MenuItem>
+              <MenuItem setActive={setActive} active={active} item="Courses">
+                <div className="grid grid-cols-2 gap-10 p-4">
+                  <ProductItem title="Difmo" href="https://difmo.com" src="https://assets.aceternity.com/demos/algochurn.webp" description="..." />
+                  <ProductItem title="Difmo" href="https://difmo.com" src="https://assets.aceternity.com/demos/algochurn.webp" description="..." />
+                  <ProductItem title="Difmo" href="https://difmo.com" src="https://assets.aceternity.com/demos/algochurn.webp" description="..." />
+                </div>
+              </MenuItem>
+              <MenuItem setActive={setActive} active={active} item="Tools">
+                <div className="grid grid-cols-2 gap-10 p-4">
+                  <HoveredLink href="/hobby">Hobby</HoveredLink>
+                  <HoveredLink href="/individual">Individual</HoveredLink>
+                  <HoveredLink href="/team">Team</HoveredLink>
+                  <HoveredLink href="/hobby">Hobby</HoveredLink>
+                </div>
+              </MenuItem>
+            </Menu>
+          </div>
+
+          <div className="md:hidden z-50">
+            <button onClick={toggleMobileMenu}>
+              <svg
+                className="w-8 h-8 text-black dark:text-white"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  d="M4 6h16M4 12h16M4 18h16"
+                ></path>
+              </svg>
+            </button>
+          </div>
+        </div>
+        
+
+        {isMobileMenuOpen && (
+          <div className="absolute top-[80px] left-0 w-full bg-white dark:bg-black shadow-lg rounded-b-lg z-40 md:hidden">
+            <MobileMenuItem
+              item="Products"
+              isOpen={mobileActiveItem === "Products"}
+              onClick={setMobileActiveItem}
+            >
+              <ProductItem title="Difmo" href="https://difmo.com" src="https://assets.aceternity.com/demos/algochurn.webp" description="..." />
+              <ProductItem title="Difmo" href="https://difmo.com" src="https://assets.aceternity.com/demos/algochurn.webp" description="..." />
+              <ProductItem title="Difmo" href="https://difmo.com" src="https://assets.aceternity.com/demos/algochurn.webp" description="..." />
+            </MobileMenuItem>
+            <MobileMenuItem
+              item="Tools"
+              isOpen={mobileActiveItem === "Tools"}
+              onClick={setMobileActiveItem}
+            >
+              <HoveredLink href="/hobby">Hobby</HoveredLink>
+              <HoveredLink href="/individual">Individual</HoveredLink>
+              <HoveredLink href="/team">Team</HoveredLink>
+              <HoveredLink href="/hobby">Hobby</HoveredLink>
+            </MobileMenuItem>
+            <MobileMenuItem
+              item="Courses"
+              isOpen={mobileActiveItem === "Courses"}
+              onClick={setMobileActiveItem}
+            >
+              <ProductItem title="Difmo" href="https://difmo.com" src="https://assets.aceternity.com/demos/algochurn.webp" description="..." />
+              <ProductItem title="Difmo" href="https://difmo.com" src="https://assets.aceternity.com/demos/algochurn.webp" description="..." />
+            </MobileMenuItem>
+          </div>
+        )}
+      </div>
+    </div>
+  );
+}
