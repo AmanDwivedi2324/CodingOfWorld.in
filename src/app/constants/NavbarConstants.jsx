@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { useNavStore } from "../data/zustand/navStore";
 
 export const MenuItem = ({ setActive, active, item, children }) => {
 
@@ -88,7 +89,7 @@ export const HoveredLink = ({ children, ...rest }) => {
   );
 };
 
-const MobileMenuItem = ({ item, children, isOpen, onClick }) => {
+export const MobileMenuItem = ({ item, children, isOpen, onClick }) => {
   return (
     <div className="border-b border-gray-200 dark:border-gray-800">
       <div

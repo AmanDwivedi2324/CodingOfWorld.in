@@ -25,5 +25,4 @@ export const useNavStore = create((set)=>({
     setMobileActiveItem: (item) => set((state)=>({
         mobileActiveItem:state.mobileActiveItem === item ? null:item,
     }))
-
 }))

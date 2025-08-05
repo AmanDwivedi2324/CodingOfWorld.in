@@ -39,6 +39,7 @@ export default function Navbar() {
                   <ProductItem title="Difmo" href="https://difmo.com" src="https://assets.aceternity.com/demos/algochurn.webp" description="..." />
                   <ProductItem title="Difmo" href="https://difmo.com" src="https://assets.aceternity.com/demos/algochurn.webp" description="..." />
                   <ProductItem title="Difmo" href="https://difmo.com" src="https://assets.aceternity.com/demos/algochurn.webp" description="..." />
+                  <ProductItem title="Difmo" href="https://difmo.com" src="https://assets.aceternity.com/demos/algochurn.webp" description="..." />
                 </div>
               </MenuItem>
               <MenuItem setActive={setActive} active={active} item="Tools">
@@ -53,21 +54,35 @@ export default function Navbar() {
           </div>
 
           <div className="md:hidden z-50">
-            <button onClick={toggleMobileMenu}>
-              <svg
-                className="w-8 h-8 text-black dark:text-white"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M4 6h16M4 12h16M4 18h16"
-                ></path>
-              </svg>
+           <button onClick={toggleMobileMenu} aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}>
+              {isMobileMenuOpen ? (
+                // Cross icon
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  strokeWidth={1.5}
+                  stroke="currentColor"
+                  className="w-8 h-8 text-black dark:text-white"
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              ) : (
+                <svg
+                  className="w-8 h-8 text-black dark:text-white"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M4 6h16M4 12h16M4 18h16"
+                  ></path>
+                </svg>
+              )}
             </button>
           </div>
         </div>
