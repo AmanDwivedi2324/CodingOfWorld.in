@@ -1,9 +1,12 @@
 import React from 'react'
-import WavyBlanket from './components/reusable-UI/WavyBlanket'
+import Image from 'next/image'
+import cowLogo from '../../public/cowLogo.svg'
 
 const page = () => {
   return (
-      <div><h1 className='text-white'>This is the entry point </h1></div>
+      <div className='text-white'>
+        first page
+      </div>
 
   )
 }
