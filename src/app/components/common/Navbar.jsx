@@ -58,6 +58,7 @@ export default function Navbar() {
                   <HoveredLink href="/tools/youtube-classes">Youtube Classes</HoveredLink>
                 </div>
               </MenuItem>
+              <button className="px-4 py-1 rounded-full  border-2 bg-[#ff2929] hover:bg-transparent hover:scale-105 transition-transform duration-300 cursor-pointer">Sign In</button>
             </Menu>
           </div>
 

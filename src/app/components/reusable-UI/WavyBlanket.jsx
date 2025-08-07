@@ -29,7 +29,7 @@ const WavyBlanket = ({ children }) => {
         initial={{ y: '-100%', opacity: 0 }}
         animate={isVisible ? { y: '0%', opacity: 1 } : {}}
         transition={{ duration: 1.5, ease: "easeOut" }}
-        className="relative rounded-[40px] w-full max-w-7xl h-[150vh] bg-black overflow-hidden"
+        className="relative md:rounded-t-[45px] w-full max-w-7xl h-[150vh] bg-black overflow-hidden"
         style={{ zIndex: -1 }} 
       />
 
