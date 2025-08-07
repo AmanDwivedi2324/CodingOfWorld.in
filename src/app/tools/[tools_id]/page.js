@@ -36,7 +36,7 @@ const page = async({params}) => {
    }
 
    return (
-    <main>
+    <main className='text-white'>
         {renderedToolContent()}
     </main>
    )
