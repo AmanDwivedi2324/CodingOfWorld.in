@@ -1,41 +1,57 @@
+// src/components/reusable-UI/WavyBlanket.jsx (Corrected)
 "use client";
 
 import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import Navbar from '../common/Navbar';
+import Footer from '../common/Footer';
 
-// The WavyBlanket component now accepts children as a prop
 const WavyBlanket = ({ children }) => {
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
     const timer = setTimeout(() => {
       setIsVisible(true);
-    }, 500); // Adjust delay as needed
+    }, 500);
 
     return () => clearTimeout(timer);
   }, []);
 
   return (
-    // Outer container for the entire WavyBlanket page
-    <div className="relative w-full overflow-hidden flex justify-center ">
-      {/* Navbar is rendered here, on top of the blanket */}
-      <div className="absolute top-0 left-0 w-full z-10">
-        <Navbar />
-      </div>
-
-      {/* The motion div for the wavy blanket animation */}
+    <div className="relative w-full min-h-screen container mx-auto max-w-7xl rounded-0 md:rounded-t-[45px]  flex flex-col justify-center overflow-hidden">
+      
+      {/*
+        The blanket animation is now a single background element
+        that covers the entire component and expands with it.
+      */}
       <motion.div
         initial={{ y: '-100%', opacity: 0 }}
         animate={isVisible ? { y: '0%', opacity: 1 } : {}}
         transition={{ duration: 1.5, ease: "easeOut" }}
-        className="relative md:rounded-t-[45px] w-full max-w-7xl h-[150vh] bg-black overflow-hidden"
-        style={{ zIndex: -1 }} 
-      />
+        className="absolute top-0 left-0 w-full max-w-7xl md:p-4 p-0  h-full bg-black"
+        style={{ zIndex: -2 }}
+      >
+        {/*
+          The wavy divs go here, positioned relative to the blanket's top.
+        */}
+      </motion.div>
+      
+      {/* Navbar is rendered first and pushes content down */}
+      <div className="relative w-full z-10">
+        <Navbar />
+      </div>
 
-      {/* The child content is rendered here, on top of the blanket */}
-      <div className="absolute top-[80px] left-1/2 -translate-x-1/2 w-full max-w-7xl h-full p-8 z-0">
+      {/*
+        FIX: This content div now uses 'flex-grow' to expand and
+        push the footer down, creating space.
+      */}
+      <div className="flex-grow p-8 z-0 relative">
         {children}
+      </div>
+
+      {/* Footer is placed at the bottom, in normal document flow */}
+      <div className="w-full z-10">
+        <Footer />
       </div>
     </div>
   );
