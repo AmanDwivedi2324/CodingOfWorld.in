@@ -1,6 +1,7 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Navbar from "./components/common/Navbar";
+import WavyBlanket from "./components/reusable-UI/WavyBlanket";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -23,7 +24,8 @@ export default function RootLayout({ children }) {
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased `}
       >
-          <Navbar />
+          {/* <Navbar /> */}
+          <WavyBlanket />
           <main>{children}</main>
       </body>
     </html>

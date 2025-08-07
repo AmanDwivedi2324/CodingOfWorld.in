@@ -1,22 +1,24 @@
 import { motion } from "framer-motion";
-import { useNavStore } from "../data/zustand/navStore";
+import Link from "next/link";
 
+// Transition object for Framer Motion animations
+const transition = {
+  type: "spring",
+  mass: 0.5,
+  damping: 11.5,
+  stiffness: 100,
+  restDelta: 0.001,
+  restSpeed: 0.001,
+};
+
+
+// The original desktop MenuItem component
 export const MenuItem = ({ setActive, active, item, children }) => {
-
-  
-  const transition = {
-    type: "spring",
-    mass: 0.5,
-    damping: 11.5,    
-    stiffness: 100,
-    restDelta: 0.001,
-    restSpeed: 0.001,
-  };
   return (
     <div onMouseEnter={() => setActive(item)} className="relative">
       <motion.p
         transition={{ duration: 0.3 }}
-        className="cursor-pointer text-white hover:opacity-[0.9]  "
+        className="cursor-pointer text-white hover:opacity-[0.9]"
       >
         {item}
       </motion.p>
@@ -45,6 +47,7 @@ export const MenuItem = ({ setActive, active, item, children }) => {
   );
 };
 
+// The original desktop Menu component
 export const Menu = ({ setActive, children }) => {
   return (
     <nav
@@ -56,39 +59,52 @@ export const Menu = ({ setActive, children }) => {
   );
 };
 
+// MODIFIED: ProductItem now uses motion and has a hover effect
 export const ProductItem = ({ title, description, href, src }) => {
   return (
-    <a href={href} className="flex space-x-2">
-      <img
-        src={src}
-        width={140}
-        height={70}
-        alt={title}
-        className="shrink-0 rounded-md shadow-2xl"
-      />
-      <div>
-        <h4 className="text-xl font-bold mb-1 text-black dark:text-white">
-          {title}
-        </h4>
-        <p className="text-neutral-700 text-sm max-w-[10rem] dark:text-neutral-300">
-          {description}
-        </p>
-      </div>
-    </a>
+    <motion.div
+      whileHover={{ scale: 1.05 }}
+      transition={{ type: "spring", stiffness: 400, damping: 10 }}
+    >
+      <Link href={href} className="flex space-x-2">
+        <img
+          src={src}
+          width={140}
+          height={70}
+          alt={title}
+          className="shrink-0 rounded-md shadow-2xl"
+        />
+        <div>
+          <h4 className="text-xl font-bold mb-1 text-black dark:text-white">
+            {title}
+          </h4>
+          <p className="text-neutral-700 text-sm max-w-[10rem] dark:text-neutral-300">
+            {description}
+          </p>
+        </div>
+      </Link>
+    </motion.div>
   );
 };
 
+// MODIFIED: HoveredLink now uses motion and has a hover effect
 export const HoveredLink = ({ children, ...rest }) => {
   return (
-    <a
-      {...rest}
-      className="text-neutral-700 dark:text-neutral-200 hover:text-black "
+    <motion.div
+      whileHover={{ y: -2 }}
+      transition={{ type: "spring", stiffness: 400, damping: 10 }}
     >
-      {children}
-    </a>
+      <Link
+        {...rest}
+        className="text-neutral-700 dark:text-neutral-200 hover:text-black"
+      >
+        {children}
+      </Link>
+    </motion.div>
   );
 };
 
+// The original MobileMenuItem component
 export const MobileMenuItem = ({ item, children, isOpen, onClick }) => {
   return (
     <div className="border-b border-gray-200 dark:border-gray-800">

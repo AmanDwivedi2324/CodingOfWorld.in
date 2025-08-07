@@ -4,3 +4,20 @@ body{
   background: #fff;
   color: black;
 }
+@keyframes wave-slow {
+  0% { transform: translateX(0) translateY(0) rotate(0deg); }
+  50% { transform: translateX(-50%) translateY(10px) rotate(1deg); }
+  100% { transform: translateX(0) translateY(0) rotate(0deg); }
+}
+
+@keyframes wave-medium {
+  0% { transform: translateX(0) translateY(0) rotate(0deg); }
+  50% { transform: translateX(-30%) translateY(-5px) rotate(-0.5deg); }
+  100% { transform: translateX(0) translateY(0) rotate(0deg); }
+}
+
+@keyframes wave-fast {
+  0% { transform: translateX(0) translateY(0) rotate(0deg); }
+  50% { transform: translateX(-70%) translateY(15px) rotate(2deg); }
+  100% { transform: translateX(0) translateY(0) rotate(0deg); }
+}

@@ -24,7 +24,7 @@ export default function Navbar() {
               alt="Coding of World Logo"
             />
           </Link>
-          <div className="hidden md:flex items-center bg-blue-700 rounded-full px-5 py-3">
+          <div className="hidden md:flex items-center bg-blue-700 rounded-full px-10 py-3">
             <Menu setActive={setActive}>
               <MenuItem setActive={setActive} active={active} item="Products">
                 <div className="grid grid-cols-2 gap-10 p-4">
@@ -43,11 +43,19 @@ export default function Navbar() {
                 </div>
               </MenuItem>
               <MenuItem setActive={setActive} active={active} item="Tools">
-                <div className="grid grid-cols-2 gap-10 p-4">
-                  <HoveredLink href="/hobby">Hobby</HoveredLink>
-                  <HoveredLink href="/individual">Individual</HoveredLink>
-                  <HoveredLink href="/team">Team</HoveredLink>
-                  <HoveredLink href="/hobby">Hobby</HoveredLink>
+                <div className="grid grid-cols-2 gap-10">
+                  <HoveredLink href="/tools/resume-maker">Resume Maker</HoveredLink>
+                  <HoveredLink href="/tools/ats">ATS Tool</HoveredLink>
+                  <HoveredLink href="/tools/json-formatter">JSON Formatter</HoveredLink>
+                  <HoveredLink href="/tools/seo-title-maker">SEO Title Maker</HoveredLink>
+                  <HoveredLink href="/tools/uuid-generator">UUID Generator</HoveredLink>
+                  <HoveredLink href="/tools/meta-description">Meta Description</HoveredLink>
+                  <HoveredLink href="/tools/regex-tester">Regex Tester</HoveredLink>
+                  <HoveredLink href="/tools/instagram-caption">Instagram Caption</HoveredLink>
+                  <HoveredLink href="/tools/jwt-decoder">JWT Decoder</HoveredLink>
+                  <HoveredLink href="/tools/background-remover">Background Remover</HoveredLink>
+                  <HoveredLink href="/tools/ai-cover-letter">AI Cover Letter</HoveredLink>
+                  <HoveredLink href="/tools/youtube-classes">Youtube Classes</HoveredLink>
                 </div>
               </MenuItem>
             </Menu>
@@ -100,22 +108,30 @@ export default function Navbar() {
               <ProductItem title="Difmo" href="https://difmo.com" src="https://assets.aceternity.com/demos/algochurn.webp" description="..." />
             </MobileMenuItem>
             <MobileMenuItem
-              item="Tools"
-              isOpen={mobileActiveItem === "Tools"}
-              onClick={setMobileActiveItem}
-            >
-              <HoveredLink href="/hobby">Hobby</HoveredLink>
-              <HoveredLink href="/individual">Individual</HoveredLink>
-              <HoveredLink href="/team">Team</HoveredLink>
-              <HoveredLink href="/hobby">Hobby</HoveredLink>
-            </MobileMenuItem>
-            <MobileMenuItem
               item="Courses"
               isOpen={mobileActiveItem === "Courses"}
               onClick={setMobileActiveItem}
             >
               <ProductItem title="Difmo" href="https://difmo.com" src="https://assets.aceternity.com/demos/algochurn.webp" description="..." />
               <ProductItem title="Difmo" href="https://difmo.com" src="https://assets.aceternity.com/demos/algochurn.webp" description="..." />
+            </MobileMenuItem>
+            <MobileMenuItem
+              item="Tools"
+              isOpen={mobileActiveItem === "Tools"}
+              onClick={setMobileActiveItem}
+            >
+              <HoveredLink href="/tools/resume-maker">Resume Maker</HoveredLink>
+                  <HoveredLink href="/tools/ats">ATS Tool</HoveredLink>
+                  <HoveredLink href="/tools/json-formatter">JSON Formatter</HoveredLink>
+                  <HoveredLink href="/tools/seo-title-maker">SEO Title Maker</HoveredLink>
+                  <HoveredLink href="/tools/uuid-generator">UUID Generator</HoveredLink>
+                  <HoveredLink href="/tools/meta-description">Meta Description</HoveredLink>
+                  <HoveredLink href="/tools/regex-tester">Regex Tester</HoveredLink>
+                  <HoveredLink href="/tools/instagram-caption">Instagram Caption</HoveredLink>
+                  <HoveredLink href="/tools/jwt-decoder">JWT Decoder</HoveredLink>
+                  <HoveredLink href="/tools/background-remover">Background Remover</HoveredLink>
+                  <HoveredLink href="/tools/ai-cover-letter">AI Cover Letter</HoveredLink>
+                  <HoveredLink href="/tools/youtube-classes">Youtube Classes</HoveredLink>
             </MobileMenuItem>
           </div>
         )}
