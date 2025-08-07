@@ -29,7 +29,7 @@ const Footer = () => {
                   className="w-52 md:w-72" 
                 />
               </Link>
-              <p className="mt-2 text-sm max-w-sm">
+              <p className="mt-2 text-sm max-w-sm ">
                 Your one-stop destination for modern tools and resources.
               </p>
             </div>
@@ -42,7 +42,7 @@ const Footer = () => {
                   <li>
                     <Link
                       href="/products/product-1"
-                      className="hover:text-white transition-colors duration-200"
+                      className="hover:text-white transition-colors duration-200 "
                     >
                       Product One
                     </Link>
@@ -50,7 +50,7 @@ const Footer = () => {
                   <li>
                     <Link
                       href="/products/product-2"
-                      className="hover:text-white transition-colors duration-200"
+                      className="hover:text-white transition-colors duration-200 "
                     >
                       Product Two
                     </Link>
@@ -58,7 +58,7 @@ const Footer = () => {
                   <li>
                     <Link
                       href="/products/product-3"
-                      className="hover:text-white transition-colors duration-200"
+                      className="hover:text-white transition-colors duration-200 "
                     >
                       Product Three
                     </Link>
@@ -71,7 +71,7 @@ const Footer = () => {
                   <li>
                     <Link
                       href="/products/product-1"
-                      className="hover:text-white transition-colors duration-200"
+                      className="hover:text-white transition-colors duration-200 "
                     >
                       Course One
                     </Link>
@@ -79,7 +79,7 @@ const Footer = () => {
                   <li>
                     <Link
                       href="/products/product-2"
-                      className="hover:text-white transition-colors duration-200"
+                      className="hover:text-white transition-colors duration-200 "
                     >
                       Course Two
                     </Link>
@@ -87,7 +87,7 @@ const Footer = () => {
                   <li>
                     <Link
                       href="/products/product-3"
-                      className="hover:text-white transition-colors duration-200"
+                      className="hover:text-white transition-colors duration-200 "
                     >
                       Course Three
                     </Link>
@@ -100,7 +100,7 @@ const Footer = () => {
                   <li>
                     <Link
                       href="/tools/resume-maker"
-                      className="hover:text-white transition-colors duration-200"
+                      className="hover:text-white transition-colors duration-200 "
                     >
                       Resume Maker
                     </Link>
@@ -108,7 +108,7 @@ const Footer = () => {
                   <li>
                     <Link
                       href="/tools/ats-tools"
-                      className="hover:text-white transition-colors duration-200"
+                      className="hover:text-white transition-colors duration-200 "
                     >
                       ATS Tool
                     </Link>
@@ -116,7 +116,7 @@ const Footer = () => {
                   <li>
                     <Link
                       href="/tools/json-formatter"
-                      className="hover:text-white transition-colors duration-200"
+                      className="hover:text-white transition-colors duration-200 "
                     >
                       JSON Formatter
                     </Link>
@@ -124,7 +124,7 @@ const Footer = () => {
                   <li>
                     <Link
                       href="/tools/seo-title-maker"
-                      className="hover:text-white transition-colors duration-200"
+                      className="hover:text-white transition-colors duration-200 "
                     >
                       SEO Title Maker
                     </Link>
@@ -132,7 +132,7 @@ const Footer = () => {
                   <li>
                     <Link
                       href="/tools/uuid-generator"
-                      className="hover:text-white transition-colors duration-200"
+                      className="hover:text-white transition-colors duration-200 "
                     >
                       UUID Generator
                     </Link>
@@ -140,7 +140,7 @@ const Footer = () => {
                   <li>
                     <Link
                       href="/tools/meta-description"
-                      className="hover:text-white transition-colors duration-200"
+                      className="hover:text-white transition-colors duration-200 "
                     >
                       Meta Description
                     </Link>
@@ -148,7 +148,7 @@ const Footer = () => {
                   <li>
                     <Link
                       href="/tools/regex-tester"
-                      className="hover:text-white transition-colors duration-200"
+                      className="hover:text-white transition-colors duration-200 "
                     >
                       Regex Tester
                     </Link>
@@ -156,7 +156,7 @@ const Footer = () => {
                   <li>
                     <Link
                       href="/tools/instagram-caption"
-                      className="hover:text-white transition-colors duration-200"
+                      className="hover:text-white transition-colors duration-200 "
                     >
                       Instagram Caption
                     </Link>
@@ -164,7 +164,7 @@ const Footer = () => {
                   <li>
                     <Link
                       href="/tools/jwt-decoder"
-                      className="hover:text-white transition-colors duration-200"
+                      className="hover:text-white transition-colors duration-200 "
                     >
                       JWT Decoder
                     </Link>
@@ -172,7 +172,7 @@ const Footer = () => {
                   <li>
                     <Link
                       href="/tools/background-remover"
-                      className="hover:text-white transition-colors duration-200"
+                      className="hover:text-white transition-colors duration-200 "
                     >
                       Background Remover
                     </Link>
@@ -180,7 +180,7 @@ const Footer = () => {
                   <li>
                     <Link
                       href="/tools/ai-cover-letter"
-                      className="hover:text-white transition-colors duration-200"
+                      className="hover:text-white transition-colors duration-200 "
                     >
                       AI Cover Letter
                     </Link>
@@ -188,7 +188,7 @@ const Footer = () => {
                   <li>
                     <Link
                       href="/tools/youtube-classes"
-                      className="hover:text-white transition-colors duration-200"
+                      className="hover:text-white transition-colors duration-200 "
                     >
                       YouTube Classes
                     </Link>
