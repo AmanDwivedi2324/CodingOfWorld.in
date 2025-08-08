@@ -1,4 +1,3 @@
-// src/components/reusable-UI/WavyBlanket.jsx (Corrected)
 "use client";
 
 import React, { useEffect, useState } from 'react';
@@ -18,7 +17,7 @@ const WavyBlanket = ({ children }) => {
   }, []);
 
   return (
-    <div className="relative w-full min-h-screen container mx-auto max-w-7xl rounded-0 md:rounded-t-[45px]  flex flex-col justify-center overflow-hidden">
+    <div className="relative w-full min-h-screen container mx-auto max-w-7xl rounded-0 md:rounded-t-[50px]  flex flex-col justify-center overflow-hidden">
       
     
       <motion.div

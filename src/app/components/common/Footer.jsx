@@ -1,266 +1,235 @@
-// src/components/common/Footer.jsx (Corrected and Responsive)
 "use client";
 
 import React from "react";
 import Link from "next/link";
-import { FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa";
+import { FaGithub, FaLinkedin, FaTwitter, FaInstagram } from "react-icons/fa";
 import Image from "next/image";
 import CowLogo from "../../../../public/CowLogo.svg";
 
 const Footer = () => {
   return (
     // The main container for the footer, with responsive padding and background
-    <div className="relative w-full flex justify-center container mx-auto md:p-0 p-5 md:bg-transparent bg-[#ff2929] ">
-      <footer className="w-full max-w-7xl md:p-4 p-0 md:bg-[#ff2929] ">
-        <div className="max-w-7xl mx-auto px-4 md:px-8 py-8">
-          {/* Main content container. Stacks vertically on mobile and horizontally on desktop */}
-          <div className="flex flex-col md:flex-row justify-between items-start md:items-center space-y-8 md:space-y-0">
-            {/* Logo and About Section */}
-            <div className="flex-shrink-0 ">
-              {/* Ensure this is a Link component if it navigates somewhere */}
-              <Link
-                href="/"
-              >
-                 <Image
-                  src={CowLogo}
-                  height={120}
-                  width={120} 
-                  alt="Coding of World Logo"
-                  className="w-52 md:w-72" 
-                />
-              </Link>
-              <p className="mt-2 text-sm max-w-sm ">
-                Your one-stop destination for modern tools and resources.
+    <footer className="bg-gradient-to-br from-[#ff2929] to-red-700 text-white ">
+      <div className="w-full px-6 py-16">
+        <div className="max-w-7xl mx-auto">
+          <div class="grid md:grid-cols-4 gap-12 mb-12">
+            <div class="md:col-span-2 lg:col-span-1">
+              <div class="flex items-center space-x-3 mb-6">
+                <Image src={CowLogo} />
+              </div>
+              <p class="text-red-200 mb-8 leading-relaxed">
+                Your one-stop destination for modern tools and resources that
+                accelerate productivity and creativity.
               </p>
+              <div class="flex space-x-4">
+                <a
+                  class="w-12 h-12 bg-white/10 backdrop-blur-sm rounded-full flex items-center justify-center hover:bg-white/20 transition-all duration-300 cursor-pointer border border-white/20 hover:border-white/40 transform hover:-translate-y-1"
+                  href="#"
+                >
+                  <i class="ri-github-fill text-white text-xl"></i>
+                </a>
+                <a
+                  class="w-12 h-12 bg-white/10 backdrop-blur-sm rounded-full flex items-center justify-center hover:bg-white/20 transition-all duration-300 cursor-pointer border border-white/20 hover:border-white/40 transform hover:-translate-y-1"
+                  href="#"
+                >
+                  <i class="ri-linkedin-fill text-white text-xl"></i>
+                </a>
+                <a
+                  class="w-12 h-12 bg-white/10 backdrop-blur-sm rounded-full flex items-center justify-center hover:bg-white/20 transition-all duration-300 cursor-pointer border border-white/20 hover:border-white/40 transform hover:-translate-y-1"
+                  href="#"
+                >
+                  <i class="ri-twitter-fill text-white text-xl"></i>
+                </a>
+                <a
+                  class="w-12 h-12 bg-white/10 backdrop-blur-sm rounded-full flex items-center justify-center hover:bg-white/20 transition-all duration-300 cursor-pointer border border-white/20 hover:border-white/40 transform hover:-translate-y-1"
+                  href="#"
+                >
+                  <i class="ri-instagram-fill text-white text-xl"></i>
+                </a>
+              </div>
             </div>
-
-            {/* Navigation Links Grid */}
-            <div className="grid grid-cols-2 sm:grid-cols-3 gap-8 text-sm">
-              <div>
-                <h3 className="font-semibold text-white mb-2">Products</h3>
-                <ul className="space-y-1">
-                  <li>
-                    <Link
-                      href="/products/product-1"
-                      className="hover:text-white transition-colors duration-200 "
-                    >
-                      Product One
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      href="/products/product-2"
-                      className="hover:text-white transition-colors duration-200 "
-                    >
-                      Product Two
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      href="/products/product-3"
-                      className="hover:text-white transition-colors duration-200 "
-                    >
-                      Product Three
-                    </Link>
-                  </li>
-                </ul>
-              </div>
-              <div>
-                <h3 className="font-semibold text-white mb-2">Courses</h3>
-                <ul className="space-y-1">
-                  <li>
-                    <Link
-                      href="/products/product-1"
-                      className="hover:text-white transition-colors duration-200 "
-                    >
-                      Course One
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      href="/products/product-2"
-                      className="hover:text-white transition-colors duration-200 "
-                    >
-                      Course Two
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      href="/products/product-3"
-                      className="hover:text-white transition-colors duration-200 "
-                    >
-                      Course Three
-                    </Link>
-                  </li>
-                </ul>
-              </div>
-              <div>
-                <h3 className="font-semibold text-white mb-2">Tools</h3>
-                <ul className="space-y-1">
-                  <li>
-                    <Link
-                      href="/tools/resume-maker"
-                      className="hover:text-white transition-colors duration-200 "
-                    >
-                      Resume Maker
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      href="/tools/ats-tools"
-                      className="hover:text-white transition-colors duration-200 "
-                    >
-                      ATS Tool
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      href="/tools/json-formatter"
-                      className="hover:text-white transition-colors duration-200 "
-                    >
-                      JSON Formatter
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      href="/tools/seo-title-maker"
-                      className="hover:text-white transition-colors duration-200 "
-                    >
-                      SEO Title Maker
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      href="/tools/uuid-generator"
-                      className="hover:text-white transition-colors duration-200 "
-                    >
-                      UUID Generator
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      href="/tools/meta-description"
-                      className="hover:text-white transition-colors duration-200 "
-                    >
-                      Meta Description
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      href="/tools/regex-tester"
-                      className="hover:text-white transition-colors duration-200 "
-                    >
-                      Regex Tester
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      href="/tools/instagram-caption"
-                      className="hover:text-white transition-colors duration-200 "
-                    >
-                      Instagram Caption
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      href="/tools/jwt-decoder"
-                      className="hover:text-white transition-colors duration-200 "
-                    >
-                      JWT Decoder
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      href="/tools/background-remover"
-                      className="hover:text-white transition-colors duration-200 "
-                    >
-                      Background Remover
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      href="/tools/ai-cover-letter"
-                      className="hover:text-white transition-colors duration-200 "
-                    >
-                      AI Cover Letter
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      href="/tools/youtube-classes"
-                      className="hover:text-white transition-colors duration-200 "
-                    >
-                      YouTube Classes
-                    </Link>
-                  </li>
-                </ul>
-              </div>
+            <div>
+              <h4 class="font-bold text-xl mb-6 text-white">Products</h4>
+              <ul class="space-y-3 text-red-100">
+                <li>
+                  <a
+                    class="hover:text-white transition-colors cursor-pointer hover:pl-2 duration-300 flex items-center group"
+                    href="#"
+                  >
+                    <i class="ri-arrow-right-s-line opacity-0 group-hover:opacity-100 transition-opacity mr-1"></i>
+                    Product One
+                  </a>
+                </li>
+                <li>
+                  <a
+                    class="hover:text-white transition-colors cursor-pointer hover:pl-2 duration-300 flex items-center group"
+                    href="#"
+                  >
+                    <i class="ri-arrow-right-s-line opacity-0 group-hover:opacity-100 transition-opacity mr-1"></i>
+                    Product Two
+                  </a>
+                </li>
+                <li>
+                  <a
+                    class="hover:text-white transition-colors cursor-pointer hover:pl-2 duration-300 flex items-center group"
+                    href="#"
+                  >
+                    <i class="ri-arrow-right-s-line opacity-0 group-hover:opacity-100 transition-opacity mr-1"></i>
+                    Product Three
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div>
+              <h4 class="font-bold text-xl mb-6 text-white">Courses</h4>
+              <ul class="space-y-3 text-red-100">
+                <li>
+                  <a
+                    class="hover:text-white transition-colors cursor-pointer hover:pl-2 duration-300 flex items-center group"
+                    href="#"
+                  >
+                    <i class="ri-arrow-right-s-line opacity-0 group-hover:opacity-100 transition-opacity mr-1"></i>
+                    Course One
+                  </a>
+                </li>
+                <li>
+                  <a
+                    class="hover:text-white transition-colors cursor-pointer hover:pl-2 duration-300 flex items-center group"
+                    href="#"
+                  >
+                    <i class="ri-arrow-right-s-line opacity-0 group-hover:opacity-100 transition-opacity mr-1"></i>
+                    Course Two
+                  </a>
+                </li>
+                <li>
+                  <a
+                    class="hover:text-white transition-colors cursor-pointer hover:pl-2 duration-300 flex items-center group"
+                    href="#"
+                  >
+                    <i class="ri-arrow-right-s-line opacity-0 group-hover:opacity-100 transition-opacity mr-1"></i>
+                    Course Three
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div>
+              <h4 class="font-bold text-xl mb-6 text-white">Popular Tools</h4>
+              <ul class="space-y-3 text-red-100 text-sm">
+                <li>
+                  <a
+                    class="hover:text-white transition-colors cursor-pointer hover:pl-2 duration-300 flex items-center group"
+                    href="#"
+                  >
+                    <i class="ri-arrow-right-s-line opacity-0 group-hover:opacity-100 transition-opacity mr-1"></i>
+                    Resume Maker
+                  </a>
+                </li>
+                <li>
+                  <a
+                    class="hover:text-white transition-colors cursor-pointer hover:pl-2 duration-300 flex items-center group"
+                    href="#"
+                  >
+                    <i class="ri-arrow-right-s-line opacity-0 group-hover:opacity-100 transition-opacity mr-1"></i>
+                    ATS Tool
+                  </a>
+                </li>
+                <li>
+                  <a
+                    class="hover:text-white transition-colors cursor-pointer hover:pl-2 duration-300 flex items-center group"
+                    href="#"
+                  >
+                    <i class="ri-arrow-right-s-line opacity-0 group-hover:opacity-100 transition-opacity mr-1"></i>
+                    JSON Formatter
+                  </a>
+                </li>
+                <li>
+                  <a
+                    class="hover:text-white transition-colors cursor-pointer hover:pl-2 duration-300 flex items-center group"
+                    href="#"
+                  >
+                    <i class="ri-arrow-right-s-line opacity-0 group-hover:opacity-100 transition-opacity mr-1"></i>
+                    SEO Title Maker
+                  </a>
+                </li>
+                <li>
+                  <a
+                    class="hover:text-white transition-colors cursor-pointer hover:pl-2 duration-300 flex items-center group"
+                    href="#"
+                  >
+                    <i class="ri-arrow-right-s-line opacity-0 group-hover:opacity-100 transition-opacity mr-1"></i>
+                    UUID Generator
+                  </a>
+                </li>
+                <li>
+                  <a
+                    class="hover:text-white transition-colors cursor-pointer hover:pl-2 duration-300 flex items-center group"
+                    href="#"
+                  >
+                    <i class="ri-arrow-right-s-line opacity-0 group-hover:opacity-100 transition-opacity mr-1"></i>
+                    Meta Description
+                  </a>
+                </li>
+                <li>
+                  <a
+                    class="hover:text-white transition-colors cursor-pointer hover:pl-2 duration-300 flex items-center group"
+                    href="#"
+                  >
+                    <i class="ri-arrow-right-s-line opacity-0 group-hover:opacity-100 transition-opacity mr-1"></i>
+                    Regex Tester
+                  </a>
+                </li>
+                <li>
+                  <a
+                    class="hover:text-white transition-colors cursor-pointer hover:pl-2 duration-300 flex items-center group"
+                    href="#"
+                  >
+                    <i class="ri-arrow-right-s-line opacity-0 group-hover:opacity-100 transition-opacity mr-1"></i>
+                    Instagram Caption
+                  </a>
+                </li>
+                <li>
+                  <a
+                    class="hover:text-white transition-colors cursor-pointer hover:pl-2 duration-300 flex items-center group"
+                    href="#"
+                  >
+                    <i class="ri-arrow-right-s-line opacity-0 group-hover:opacity-100 transition-opacity mr-1"></i>
+                    JWT Decoder
+                  </a>
+                </li>
+                <li>
+                  <a
+                    class="hover:text-white transition-colors cursor-pointer hover:pl-2 duration-300 flex items-center group"
+                    href="#"
+                  >
+                    <i class="ri-arrow-right-s-line opacity-0 group-hover:opacity-100 transition-opacity mr-1"></i>
+                    Background Remover
+                  </a>
+                </li>
+                <li>
+                  <a
+                    class="hover:text-white transition-colors cursor-pointer hover:pl-2 duration-300 flex items-center group"
+                    href="#"
+                  >
+                    <i class="ri-arrow-right-s-line opacity-0 group-hover:opacity-100 transition-opacity mr-1"></i>
+                    AI Cover Letter
+                  </a>
+                </li>
+                <li>
+                  <a
+                    class="hover:text-white transition-colors cursor-pointer hover:pl-2 duration-300 flex items-center group"
+                    href="#"
+                  >
+                    <i class="ri-arrow-right-s-line opacity-0 group-hover:opacity-100 transition-opacity mr-1"></i>
+                    YouTube Classes
+                  </a>
+                </li>
+              </ul>
             </div>
           </div>
-
-          <hr className="my-8 border-gray-700" />
-
-          {/* Bottom Section with Copyright and Socials */}
-          <div className="flex flex-col md:flex-row justify-between items-center text-sm space-y-4 md:space-y-0">
-            <div className="space-y-2 md:space-y-0">
-              <p className="text-center md:text-left">
-                © {new Date().getFullYear()} Coding Of World. All rights
-                reserved.
-              </p>
-              <div className="flex justify-center md:justify-start space-x-3 text-gray-400">
-                <Link
-                  href="/about"
-                  className="hover:text-white transition-colors duration-200 text-nowrap"
-                >
-                  About Us
-                </Link>
-                <span className="ml-2">|</span>
-                <Link
-                  href="/contact"
-                  className="hover:text-white transition-colors duration-200 text-nowrap"
-                >
-                  Contact Us
-                </Link>
-                <span className="ml-2">|</span>
-                <Link
-                  href="/privacy"
-                  className="hover:text-white transition-colors duration-200 text-nowrap"
-                >
-                  Privacy Policy
-                </Link>
-                {/* <span className="ml-2">|</span> */}
-              </div>
-            </div>
-            <div className="flex space-x-4">
-              <a
-                href="https://github.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-gray-400 hover:text-white transition-colors duration-200"
-              >
-                <FaGithub size={20} />
-              </a>
-              <a
-                href="https://linkedin.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-gray-400 hover:text-white transition-colors duration-200"
-              >
-                <FaLinkedin size={20} />
-              </a>
-              <a
-                href="https://twitter.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-gray-400 hover:text-white transition-colors duration-200"
-              >
-                <FaTwitter size={20} />
-              </a>
-            </div>
-          </div>
+          <div className="border-t border-red-400/30 pt-8"></div>
         </div>
-      </footer>
-    </div>
+      </div>
+    </footer>
   );
 };
 

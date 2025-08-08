@@ -19,12 +19,12 @@ export default function Navbar() {
           <Link href="/" className="flex items-center space-x-4">
             <Image
               src={CowLogo}
-              height={96}
-              width={120}
+              height={180}
+              width={180}
               alt="Coding of World Logo"
             />
           </Link>
-          <div className="hidden md:flex items-center bg-blue-700 rounded-full px-10 py-3">
+          <div className="hidden md:flex items-center  rounded-full px-10 py-3">
             <Menu setActive={setActive}>
               <MenuItem setActive={setActive} active={active} item="Products">
                 <div className="grid grid-cols-2 gap-10 p-4">
@@ -58,7 +58,7 @@ export default function Navbar() {
                   <HoveredLink href="/tools/youtube-classes">Youtube Classes</HoveredLink>
                 </div>
               </MenuItem>
-              <button className="px-4 py-1 rounded-full  border-2 bg-[#ff2929] hover:bg-transparent hover:scale-105 transition-transform duration-300 cursor-pointer">Sign In</button>
+              <button className=" rounded-full  text-[#ff2929]  hover:scale-105 transition-transform duration-300 cursor-pointer px-6 py-2 border-1 border-transparent bg-white ">Sign In</button>
             </Menu>
           </div>
 
